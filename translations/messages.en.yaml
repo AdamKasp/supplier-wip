@@ -1,0 +1,4 @@
+app:
+    ui:
+        manage_suppliers: manage suppliers
+        suppliers: Suppliers
