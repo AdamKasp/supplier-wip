@@ -13,15 +13,33 @@ declare(strict_types=1);
 
 namespace App\Entity\Supplier;
 
-final class Supplier implements SupplierInterface
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * @ORM\Entity
+ * @ORM\Table("app_supplier")
+ */
+class Supplier implements SupplierInterface
 {
-    /** @var string|null */
+
+    /** @var string|null
+     *
+     * @ORM\Column(type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
     private $id;
 
-    /** @var string|null */
+    /** @var string|null
+     *
+     * @ORM\Column(type="string")
+     */
     private $name;
 
-    /** @var string|null */
+    /** @var string|null
+     *
+     * @ORM\Column(type="string")
+     */
     private $email;
 
     /**
