@@ -31,3 +31,9 @@ services:
             - '%app.model.supplier.class%'
         tags:
             - {name: form.type}
+            
+    App\Notifier\SupplierTrustingNotifierInterface:
+        class: App\Notifier\LogSupplierTrustingNotifier
+        public: true
+        arguments:
+            - '@logger'
