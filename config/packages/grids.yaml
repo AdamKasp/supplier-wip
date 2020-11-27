@@ -25,3 +25,15 @@ sylius_grid:
                         type: update
                     delete:
                         type: delete
+                    trust:
+                        type: apply_transition
+                        label: app.ui.trust
+                        icon: star
+                        options:
+                            link:
+                                route: app_admin_supplier_trust
+                                parameters:
+                                    id: resource.id
+                            class: yellow
+                            transition: trust
+                            graph: app_supplier
