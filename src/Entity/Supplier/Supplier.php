@@ -21,8 +21,10 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Supplier implements SupplierInterface
 {
+    public const STATE_NEW = 'new';
+    public const STATE_TRUSTED = 'trusted';
 
-    /** @var string|null
+    /** @var int|null
      *
      * @ORM\Column(type="integer")
      * @ORM\Id
@@ -41,6 +43,12 @@ class Supplier implements SupplierInterface
      * @ORM\Column(type="string")
      */
     private $email;
+
+    /** @var string
+     *
+     *@ORM\Column(type="string")
+     */
+    private $state = self::STATE_NEW;
 
     /**
      * @return string|null
@@ -65,8 +73,18 @@ class Supplier implements SupplierInterface
         $this->email = $email;
     }
 
-    public function getId(): ?string
+    public function getId(): ?int
     {
         return $this->id;
+    }
+
+    public function getState(): string
+    {
+        return $this->state;
+    }
+
+    public function setState(string $state): void
+    {
+        $this->state = $state;
     }
 }

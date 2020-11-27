@@ -15,4 +15,8 @@ interface SupplierInterface extends ResourceInterface
         public function setEmail(?string $email): void;
 
         public function getEmail(): ?string;
+
+        public function setState(string $state): void;
+
+        public function getState(): string;
 }

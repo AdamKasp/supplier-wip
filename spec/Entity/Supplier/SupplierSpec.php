@@ -13,9 +13,15 @@ final class SupplierSpec extends ObjectBehavior
         $this->getName()->shouldReturn('Adam supp');
     }
 
-    function its_email_its_mutable(): void
+    function its_email_it_mutable(): void
     {
         $this->setEmail('adam@adam.com');
         $this->getEmail()->shouldReturn('adam@adam.com');
+    }
+
+    function its_status_is_mutable(): void
+    {
+        $this->setState('new');
+        $this->getState()->shouldReturn('new');
     }
 }
