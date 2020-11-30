@@ -1,0 +1,6 @@
+services:
+    App\Tests\Behats\Context\SupplierContext:
+        public: true
+        arguments:
+            - '@router'
+            - '@Behat\Mink\Session'

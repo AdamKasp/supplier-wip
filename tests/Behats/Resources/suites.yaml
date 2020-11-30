@@ -1,0 +1,12 @@
+default:
+    suites:
+        ui_admin_supplier:
+            contexts:
+                - sylius.behat.context.hook.doctrine_orm
+                    
+                - sylius.behat.context.setup.admin_security
+                
+                - App\Tests\Behats\Context\SupplierContext
+                    
+            filters:
+                tags: '@managing_suppliers && @ui'
