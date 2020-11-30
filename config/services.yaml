@@ -31,9 +31,10 @@ services:
             - '%app.model.supplier.class%'
         tags:
             - {name: form.type}
-            
+ 
+                
     App\Notifier\SupplierTrustingNotifierInterface:
-        class: App\Notifier\LogSupplierTrustingNotifier
+        class: App\Notifier\EmailSupplierTrustingNotifier
         public: true
         arguments:
-            - '@logger'
+            - '@sylius.email_sender'
